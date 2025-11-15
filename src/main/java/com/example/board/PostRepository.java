@@ -13,7 +13,10 @@ public class PostRepository {
                 ));
         posts.add(new Post(currentId, "공지사항", "관리자",
                 " adim@example.com","1234","공지사항 영역"));
-
     }
+    public List<Post> findAll(){
+        return posts;
+    }
+
 
 }
