@@ -17,6 +17,24 @@ public class PostRepository {
     public List<Post> findAll(){
         return posts;
     }
-
-
+    public Post findById(int id){
+        for(Post p : posts){
+            if(p.getId() == id) return p;
+        }
+        return null;
+    }
+    public Post create(String title, String writer, String email, String password, String content){
+        Post p = new Post(currentId++,title,writer,email,password,content);
+        posts.add(p);
+        return p;
+    }
+    public boolean update(int id, String title, String writer, String email, String password, String content){
+        Post p = findById(id);
+        if(p==null) return false;
+        p.setTitle(title);
+        p.setWriter(writer);
+        p.setEmail(email);
+        p.setPassword(password);
+        return true;
+    }
 }
