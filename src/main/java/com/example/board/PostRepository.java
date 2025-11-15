@@ -35,6 +35,7 @@ public class PostRepository {
         p.setWriter(writer);
         p.setEmail(email);
         p.setPassword(password);
+        p.setContent(content);
         return true;
     }
     public boolean delete(int id){
