@@ -37,4 +37,10 @@ public class PostRepository {
         p.setPassword(password);
         return true;
     }
+    public boolean delete(int id){
+        Post p = findById(id);
+        if(p==null) return false;
+        posts.remove(p);
+        return true;
+    }
 }
